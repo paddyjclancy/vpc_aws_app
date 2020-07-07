@@ -49,4 +49,26 @@
 	3) .bashrc
 
 - Run npm instead of pm2 - more output for troubleshooting
-	
+
+## Bastion Server Set-up
+
+1) Switch off MongoDB server first from inside DB
+	- `sudo systemctl stop mongod`
+	- `service mongod status` <-- Check
+
+2) Security groups - Private
+	- Remove SSH access
+3) Create public instance
+	- New security group - Bastion
+		- Inbound: SSH - My IP
+		- Outbound: All Traffic 0.0.0.0
+4) Append private (DB) security group
+	-  Inbound: Bastion SG AND IP
+5) scp key into Bastion
+	- In new /.ssh folder
+6) ssh into DB, through bastion
+7) Start up mongodb server
+	- `sudo systemctl start mongod`
+	- `systemctl status mongod` <-- Check
+8) Go to domain
+9) Go to domain/posts
