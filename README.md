@@ -72,3 +72,4 @@
 	- `systemctl status mongod` <-- Check
 8) Go to domain
 9) Go to domain/posts
+Test Thur
