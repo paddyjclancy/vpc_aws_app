@@ -74,3 +74,4 @@
 9) Go to domain/posts
 Test Thur
 Test merge
+Test merge
